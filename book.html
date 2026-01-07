@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Books | Cyber Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        /* Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f0f4f8;
+            color: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #121629;
+            padding: 1rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            user-select: none;
+            flex-wrap: wrap;
+        }
+
+        nav h1 {
+            font-weight: 800;
+            font-size: 1.65rem;
+            letter-spacing: 1.3px;
+            color: #ffffff;
+            margin: 0;
+            cursor: default;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav .nav-links a {
+            color: #a8caff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding-bottom: 3px;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a.active {
+            color: #ffffff;
+            border-color: #4285f4;
+        }
+
+        nav .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #4285f4;
+            border-radius: 2px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .book {
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgb(0 0 0 / 0.15);
+        }
+
+        .book h1 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .book p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #444;
+            flex-grow: 1;
+        }
+
+        .book ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .book ul li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: right;
+        }
+
+        .learn-btn {
+            background-color: #0d6efd;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgb(13 110 253 / 0.4);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        .learn-btn:hover {
+            background-color: #084298;
+            box-shadow: 0 6px 12px rgb(8 66 152 / 0.6);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 20px auto 40px auto;
+            }
+
+            nav {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1>University Digital Library</h1>
+        <div class="nav-links" role="navigation" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="book.html" class="active" aria-current="page">Books</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- BOOK 1 -->
+        <section class="book">
+            <h1>📕 Cyber Crime Book</h1>
+            <p>Cyber Crime wo jurm hota hai jo computer, internet ya digital systems ke zariye kiya jata hai.</p>
+
+            <h3>Chapter Highlights:</h3>
+            <ul>
+                <li>What is Phishing?</li>
+                <li>Types of Phishing</li>
+                <li>Real Examples</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <!-- BOOK 2 -->
+        <section class="book">
+            <h1>📘 Introduction to Cyber Security</h1>
+            <p>Cyber Security ka matlab systems, networks aur data ko attacks se protect karna hota hai.</p>
+
+            <h3>Topics:</h3>
+            <ul>
+                <li>Confidentiality</li>
+                <li>Integrity</li>
+                <li>Availability</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <!-- BOOK 3 -->
+        <section class="book">
+            <h1>📗 Computer Architecture</h1>
+            <p>Computer Architecture computer system ke internal design ko samjhata hai jaise CPU, Memory aur I/O.</p>
+
+            <h3>Key Concepts:</h3>
+            <ul>
+                <li>CPU & Registers</li>
+                <li>Memory Hierarchy</li>
+                <li>Input / Output Devices</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <!-- BOOK 4 -->
+        <section class="book">
+            <h1>📙 Software Engineering</h1>
+            <p>Software Engineering ek discipline hai jo software ko systematically design, develop aur maintain karne
+                par focus karti hai.</p>
+
+            <h3>Important Topics:</h3>
+            <ul>
+                <li>SDLC</li>
+                <li>Requirement Analysis</li>
+                <li>Testing & Maintenance</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <!-- BOOK 5 -->
+        <section class="book">
+            <h1>📔 Introduction to Management</h1>
+            <p>Management ka matlab hai resources aur logon ko organize karke goals hasil karna.</p>
+
+            <h3>Core Topics:</h3>
+            <ul>
+                <li>Planning & Organizing</li>
+                <li>Leadership</li>
+                <li>Decision Making</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <!-- BOOK 6 -->
+        <section class="book">
+            <h1>📒 Operating Systems</h1>
+            <p>Operating System computer hardware aur software ke darmiyan interface provide karta hai.</p>
+
+            <h3>Topics Covered:</h3>
+            <ul>
+                <li>Process Management</li>
+                <li>Memory Management</li>
+                <li>File Systems</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <!-- BOOK 7 -->
+        <section class="book">
+            <h1>📓 Data Structures & Algorithms</h1>
+            <p>Data Structures aur Algorithms programming ka foundation hain jo data efficiently handle karte hain.</p>
+
+            <h3>Important Concepts:</h3>
+            <ul>
+                <li>Arrays & Linked Lists</li>
+                <li>Trees & Graphs</li>
+                <li>Sorting & Searching</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+
+        <section class="book">
+            <h1>📒 Operating Systems</h1>
+            <p>Operating System computer hardware aur software ke darmiyan interface provide karta hai.</p>
+
+            <h3>Topics Covered:</h3>
+            <ul>
+                <li>Process Management</li>
+                <li>Memory Management</li>
+                <li>File Systems</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <section class="book">
+            <h1>📓 Data Structures & Algorithms</h1>
+            <p>Data Structures aur Algorithms programming ka foundation hain jo data efficiently handle karte hain.
+            </p>
+
+            <h3>Important Concepts:</h3>
+            <ul>
+                <li>Arrays & Linked Lists</li>
+                <li>Trees & Graphs</li>
+                <li>Sorting & Searching</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <!-- RANDOM UNIVERSITY BOOKS ADDED -->
+
+        <section class="book">
+            <h1>📙 Linear Algebra</h1>
+            <p>Linear Algebra matrices, vectors aur linear transformations ke fundamental concepts ko cover karta
+                hai.</p>
+
+            <h3>Core Topics:</h3>
+            <ul>
+                <li>Vector Spaces</li>
+                <li>Matrix Operations</li>
+                <li>Eigenvalues & Eigenvectors</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <section class="book">
+            <h1>📘 Principles of Economics</h1>
+            <p>Economics ka matlab hai resources ka efficient allocation aur market ke behavior ko samajhna.</p>
+
+            <h3>Important Areas:</h3>
+            <ul>
+                <li>Supply & Demand</li>
+                <li>Market Structures</li>
+                <li>Fiscal Policy</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <section class="book">
+            <h1>📗 Digital Signal Processing</h1>
+            <p>DSP signal analysis aur processing techniques ko samajhne aur apply karne ke liye hai.</p>
+
+            <h3>Key Topics:</h3>
+            <ul>
+                <li>Fourier Transform</li>
+                <li>Filter Design</li>
+                <li>Sampling Theory</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <section class="book">
+            <h1>📙 Database Systems</h1>
+            <p>Database Systems data ko efficiently store, retrieve aur manage karne ke liye design kiye jate hain.
+            </p>
+
+            <h3>Topics:</h3>
+            <ul>
+                <li>SQL Queries</li>
+                <li>Normalization</li>
+                <li>Transactions & Concurrency</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <section class="book">
+            <h1>📔 Environmental Science</h1>
+            <p>Environmental Science environment aur natural resources ki protection pe focus karta hai.</p>
+
+            <h3>Important Concepts:</h3>
+            <ul>
+                <li>Pollution Types</li>
+                <li>Climate Change</li>
+                <li>Sustainable Development</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+        <section class="book">
+            <h1>📒 Artificial Intelligence</h1>
+            <p>Artificial Intelligence machines ko intelligent behavior dene ke techniques ko study karta hai.</p>
+
+            <h3>Core Topics:</h3>
+            <ul>
+                <li>Machine Learning</li>
+                <li>Neural Networks</li>
+                <li>Natural Language Processing</li>
+            </ul>
+
+            <footer>
+                <a class="learn-btn" href="login.html">Learn More</a>
+            </footer>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

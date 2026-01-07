@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University Digital Library | Access Academic Resources Anytime, Anywhere</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      color: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    /* NAVIGATION */
+    nav {
+      background: #121629;
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      user-select: none;
+      flex-wrap: wrap;
+    }
+    nav h1 {
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: 1.3px;
+      color: #ffffff;
+      margin: 0;
+      cursor: default;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    nav .nav-links a {
+      color: #a8caff;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding-bottom: 3px;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+      position: relative;
+      white-space: nowrap;
+    }
+    nav .nav-links a:hover,
+    nav .nav-links a.active {
+      color: #ffffff;
+      border-color: #4285f4;
+    }
+    nav .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #4285f4;
+      border-radius: 2px;
+    }
+    
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(58,123,213,0.85), rgba(58,96,115,0.85)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 140px 20px 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+    }
+    .hero h1 {
+      font-size: 3.7rem;
+      max-width: 900px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+      letter-spacing: 1.2px;
+      line-height: 1.1;
+    }
+    .hero p {
+      font-size: 1.55rem;
+      max-width: 740px;
+      line-height: 1.6;
+      margin-bottom: 45px;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    }
+    .btn-primary {
+      background: #4285f4;
+      color: white;
+      padding: 20px 56px;
+      font-weight: 700;
+      font-size: 1.35rem;
+      border-radius: 50px;
+      box-shadow: 0 7px 25px rgba(66, 133, 244, 0.7);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      box-sizing: border-box;
+    }
+    .btn-primary:hover {
+      background: #3367d6;
+      box-shadow: 0 10px 30px rgba(51, 103, 214, 0.85);
+    }
+    
+    /* MAIN CONTENT */
+    main {
+      max-width: 1100px;
+      margin: 70px auto 100px;
+      padding: 0 28px;
+      color: #222;
+    }
+    
+    main h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.3rem;
+      text-align: center;
+      color: #121629;
+      letter-spacing: 0.6px;
+      user-select: none;
+    }
+    
+    main p {
+      max-width: 900px;
+      margin: 0 auto 28px;
+      font-size: 1.22rem;
+      line-height: 1.75;
+      text-align: justify;
+      color: #444;
+    }
+    
+    main ul {
+      max-width: 900px;
+      margin: 1.2rem auto 50px;
+      padding-left: 28px;
+      color: #555;
+      font-size: 1.18rem;
+      line-height: 1.6;
+      user-select: text;
+    }
+    main ul li {
+      margin-bottom: 14px;
+      position: relative;
+      padding-left: 18px;
+    }
+    main ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #4285f4;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1;
+      top: 2px;
+    }
+    
+    /* CARD STYLE FOR KEY FEATURES */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(310px,1fr));
+      gap: 28px;
+      max-width: 1000px;
+      margin: 0 auto 70px;
+      user-select: none;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px 38px;
+      box-shadow: 0 8px 28px rgb(66 133 244 / 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .feature-card:hover {
+      box-shadow: 0 15px 40px rgb(66 133 244 / 0.38);
+      transform: translateY(-9px);
+    }
+    .feature-card h3 {
+      color: #4285f4;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+      user-select: none;
+    }
+    .feature-card p {
+      font-weight: 500;
+      color: #555;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: #121629;
+      color: #a8caff;
+      text-align: center;
+      padding: 40px 35px 40px;
+      font-size: 1rem;
+      box-shadow: inset 0 1px 3px rgb(255 255 255 / 0.1);
+      user-select: none;
+      letter-spacing: 0.07em;
+    }
+    footer .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    footer .footer-section {
+      flex: 1 1 210px;
+      min-width: 210px;
+      user-select: text;
+    }
+    footer .footer-section h4 {
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #7caeff;
+    }
+    footer .footer-section ul {
+      padding-left: 0;
+    }
+    footer .footer-section ul li {
+      margin-bottom: 12px;
+    }
+    footer .footer-section ul li a {
+      color: #c4d3fc;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+    footer .footer-section ul li a:hover {
+      color: #ffffff;
+    }
+    footer .copyright {
+      text-align: center;
+      width: 100%;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #7a8fb9;
+      user-select: none;
+      letter-spacing: 0.1em;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+      main {
+        padding: 0 20px;
+      }
+      .hero h1 {
+        font-size: 2.9rem;
+      }
+      .hero p {
+        font-size: 1.25rem;
+      }
+    }
+    @media (max-width: 600px) {
+      nav .nav-links {
+        gap: 1.2rem;
+      }
+      nav a {
+        font-size: 1rem;
+        margin-left: 15px;
+      }
+      .hero {
+        padding: 110px 15px 80px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1.05rem;
+      }
+      main h2 {
+        font-size: 2.2rem;
+      }
+      main p, main ul {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .btn-primary {
+        padding: 16px 40px;
+        font-size: 1.15rem;
+      }
+      footer .footer-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+      footer .footer-section {
+        min-width: 100%;
+      }
+    }
+    @media (max-width: 400px) {
+      nav a {
+        margin-left: 12px;
+        font-size: 0.95rem;
+      }
+      .btn-primary {
+        padding: 14px 32px;
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h1>University Digital Library</h1>
+  <div class="nav-links" role="navigation" aria-label="Primary navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="book.html">Books</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
+
+<section class="hero" role="banner" aria-label="Welcome banner with site introduction">
+  <h1>Welcome to the University Digital Library</h1>
+  <p>Access thousands of academic resources, research papers, and eBooks anytime, anywhere.</p>
+  <a href="book.html" class="btn-primary" role="button" aria-label="Explore Books">Explore Books</a>
+</section>
+
+<main>
+  <h2>About Our Library</h2>
+  <p>
+    Our University Digital Library is a centralized hub designed to provide students, faculty, and researchers with instant access to an extensive collection of academic materials across all disciplines.
+  </p>
+  <p>
+    Whether you are preparing for exams, conducting research, or seeking knowledge for personal growth, our digital library offers a rich selection of eBooks, journals, and multimedia content to support your educational journey.
+  </p>
+
+  <div class="features-grid" role="list" aria-label="Key features and benefits of the University Digital Library">
+    <article class="feature-card" role="listitem">
+      <h3>Vast Collection</h3>
+      <p>Thousands of books, journals, theses, and research papers spanning science, engineering, humanities, social sciences, and more.</p>
+    </article>
+    <article class="feature-card" role="listitem">
+      <h3>24/7 Access</h3>
+      <p>Access library resources anytime and from any device, whether on campus or remote.</p>
+    </article>
+    <article class="feature-card" role="listitem">
+      <h3>Advanced Search</h3>
+      <p>Powerful search tools to quickly find books, articles, and authors relevant to your study or research needs.</p>
+    </article>
+    <article class="feature-card" role="listitem">
+      <h3>Personalized Accounts</h3>
+      <p>Create your profile to bookmark favorite resources, track loans, and manage your reading lists.</p>
+    </article>
+    <article class="feature-card" role="listitem">
+      <h3>Research Support</h3>
+      <p>Get assistance from librarians and access citation tools to help you in your academic work.</p>
+    </article>
+    <article class="feature-card" role="listitem">
+      <h3>Multimedia Resources</h3>
+      <p>Explore video lectures, audio books, and interactive learning modules tailored to enhance your understanding.</p>
+    </article>
+  </div>
+
+  <h2>Why Use the University Digital Library?</h2>
+  <p>
+    Our digital library helps students and faculty overcome the limitations of physical libraries by providing instant digital access to a wide range of academic content. It encourages self-paced learning, collaboration, and innovation.
+  </p>
+  <p>
+    With continually updated resources and expert support, the library is an indispensable tool in your academic success.
+  </p>
+
+  <h2>Who Can Benefit?</h2>
+  <ul>
+    <li>Undergraduate and graduate students from all departments</li>
+    <li>University professors and researchers</li>
+    <li>Academic advisors and librarians</li>
+    <li>Lifelong learners seeking access to quality educational materials</li>
+  </ul>
+
+  <h2>Get Started Now</h2>
+  <p>
+    Click the <strong>Explore Books</strong> button above to begin browsing our extensive digital collections. Sign up or login to personalize your library experience and access exclusive features.
+  </p>
+  <p>
+    We are dedicated to supporting your academic journey with the best digital resources and user-friendly tools.
+  </p>
+</main>
+
+<footer>
+  <div class="footer-container" role="contentinfo" aria-label="Footer with quick links and information">
+    <section class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html" aria-label="Go to Home page">Home</a></li>
+        <li><a href="book.html" aria-label="Browse Books collection">Books</a></li>
+        <li><a href="login.html" aria-label="Go to Login page">Login</a></li>
+        <li><a href="about.html" aria-label="Learn about the library">About Us</a></li>
+        <li><a href="login.html" aria-label="Contact the library">Contact</a></li>
+        <li><a href="privacy.html" aria-label="Read library policies">privacy Policies</a></li>
+      </ul>
+    </section>
+    <section class="footer-section">
+      <h4>Contact & Support</h4>
+      <ul>
+        <li>Email: <a href="mailto:support@unilib.edu" aria-label="Send email to support">support@unilib.edu</a></li>
+        <li>Phone: <a href="tel:+1234567890" aria-label="Call support phone number">+1 (234) 567-890</a></li>
+        <li>Address: 123 University Drive, Campus City, Country</li>
+        <li><a href="privacy.html" aria-label="Read Privacy Policy">Privacy Policy</a></li>
+        <li><a href="terms.html" aria-label="Read Terms of Service">Terms of Service</a></li>
+      </ul>
+    </section>
+    <section class="footer-section">
+      <h4>About University Digital Library</h4>
+      <p>
+        The University Digital Library is committed to providing open and convenient access to academic knowledge for students, faculty, and staff across all disciplines.
+      </p>
+    </section>
+  </div>
+  <div class="copyright">
+    &copy; 2026 University Digital Library | Developed by Shoukat | All rights reserved
+  </div>
+</footer>
+
+</body>
+</html>

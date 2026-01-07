@@ -1,0 +1,74 @@
+body{
+  margin:0;
+  font-family:Georgia, serif;
+  background:#fdfcf8;
+}
+
+nav{
+  background:#222;
+  color:white;
+  padding:15px;
+}
+
+nav a{
+  color:white;
+  margin-right:15px;
+  text-decoration:none;
+}
+
+.cover{
+  text-align:center;
+  padding:120px;
+}
+
+.btn{
+  padding:12px 25px;
+  background:#007bff;
+  color:white;
+  text-decoration:none;
+}
+
+.book{
+  max-width:800px;
+  margin:40px auto;
+  padding:40px;
+  background:white;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.book h1{
+  margin-bottom:15px;
+}
+
+footer{
+  text-align:right;
+  margin-top:30px;
+}
+
+.learn-btn{
+  background:#dc3545;
+  color:white;
+  padding:10px 20px;
+  text-decoration:none;
+}
+
+.page{
+  max-width:400px;
+  margin:80px auto;
+  text-align:center;
+}
+
+input,button{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+
+.warning{
+  color:red;
+}
+
+#output{
+  color:red;
+  margin-top:20px;
+}
