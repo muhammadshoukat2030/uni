@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | SecureLearn</title>
   <style>
     /* Reset */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -20,14 +24,17 @@
       scroll-behavior: smooth;
       line-height: 1.6;
     }
+
     a {
       text-decoration: none;
       color: inherit;
     }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     /* NAVIGATION */
     nav {
       background: #121629;
@@ -35,13 +42,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
       position: sticky;
       top: 0;
       z-index: 1000;
       user-select: none;
       flex-wrap: wrap;
     }
+
     nav h1 {
       font-weight: 700;
       font-size: 1.5rem;
@@ -50,10 +58,12 @@
       margin: 0;
       cursor: default;
     }
+
     nav .nav-links {
       display: flex;
       gap: 2rem;
     }
+
     nav .nav-links a {
       color: #a8caff;
       font-weight: 600;
@@ -64,11 +74,13 @@
       position: relative;
       white-space: nowrap;
     }
+
     nav .nav-links a:hover,
     nav .nav-links a.active {
       color: #ffffff;
       border-color: #4285f4;
     }
+
     nav .nav-links a.active::after {
       content: '';
       position: absolute;
@@ -79,7 +91,7 @@
       background-color: #4285f4;
       border-radius: 2px;
     }
-    
+
 
     /* MAIN SECTION */
     section {
@@ -89,12 +101,14 @@
       text-align: center;
       flex-grow: 1;
     }
+
     section h1 {
       font-size: 2.8rem;
       color: #121629;
       margin-bottom: 1rem;
       user-select: none;
     }
+
     section p {
       font-size: 1.25rem;
       color: #444;
@@ -116,6 +130,7 @@
       user-select: none;
       letter-spacing: 0.07em;
     }
+
     footer a {
       color: #a8caff;
       text-decoration: none;
@@ -123,6 +138,7 @@
       font-weight: 600;
       transition: color 0.3s ease;
     }
+
     footer a:hover {
       color: #ffffff;
     }
@@ -132,22 +148,28 @@
       nav {
         padding: 1rem;
       }
+
       nav h2 {
         font-size: 1.3rem;
       }
+
       nav a {
         font-size: 0.95rem;
       }
+
       section h1 {
         font-size: 2rem;
       }
+
       section p {
         font-size: 1rem;
         max-width: 90%;
       }
+
       footer {
         font-size: 0.9rem;
       }
+
       footer a {
         margin: 0 6px;
         font-size: 0.9rem;
@@ -155,39 +177,56 @@
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <h1>University Digital Library</h1>
-  <div class="nav-links" role="navigation" aria-label="Primary navigation">
-    <a href="index.html">Home</a>
-    <a href="about.html"  class="active" aria-current="page">About</a>
-    <a href="book.html">Books</a>
-    <a href="login.html">Login</a>
-  </div>
-</nav>
+  <nav>
+    <h1>University Digital Library</h1>
+    <div class="nav-links" role="navigation" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active" aria-current="page">About</a>
+      <a href="book.html">Books</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
 
-<section>
-  <h1>About This Website</h1>
-  <p>
-    SecureLearn students ko phishing attacks ke bare me practical aur real examples ke sath samjhane ke liye banai gayi hai.
-  </p>
-  <p>
-    Is website ka purpose sirf education hai — koi real data save nahi hota.
-  </p>
-</section>
+  <section>
+    <h1>About This Website</h1>
+    <p>
+      SecureLearn is designed to help students understand phishing attacks through practical explanations and real-world
+      examples.
+    </p>
+    <p>
+      This website provides detailed information about different types of phishing, including email phishing, fake
+      websites, and social engineering techniques used by attackers.
+    </p>
+    <p>
+      Users can learn how phishing attacks work, why people fall victim to them, and what warning signs should be
+      noticed to stay safe online.
+    </p>
+    <p>
+      The main purpose of this platform is education and awareness only. All examples shown are simulations, and no real
+      or personal data is collected, stored, or shared.
+    </p>
+    <p>
+      SecureLearn encourages responsible internet usage and helps students build basic cybersecurity awareness in a safe
+      learning environment.
+    </p>
+  </section>
 
-<footer>
-  <p>
-    &copy; 2026 SecureLearn | Developed by Shoukat | All rights reserved
-  </p>
-  <p>
-    <a href="index.html">Home</a> | 
-    <a href="about.html">About</a> | 
-    <a href="book.html">Books</a> | 
-    <a href="login.html">Login</a>
-  </p>
-</footer>
+
+  <footer>
+    <p>
+      &copy; 2026 SecureLearn | Developed by Shoukat | All rights reserved
+    </p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="book.html">Books</a> |
+      <a href="login.html">Login</a>
+    </p>
+  </footer>
 
 </body>
+
 </html>
