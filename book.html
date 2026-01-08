@@ -163,6 +163,98 @@
             background-color: #084298;
             box-shadow: 0 6px 12px rgb(8 66 152 / 0.6);
         }
+        
+        /* Footer Styles */
+
+.fotr {
+  background-color: #121629;
+  color: #a8caff;
+  text-align: center;
+  padding: 40px 35px;
+  font-size: 1rem;
+  box-shadow: inset 0 1px 3px rgb(255 255 255 / 0.1);
+  user-select: none;
+  letter-spacing: 0.07em;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer-section {
+  flex: 1 1 210px;
+  min-width: 210px;
+  user-select: text;
+  text-align: left;
+}
+
+.footer-section h4 {
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #7caeff;
+  font-size: 1.1rem;
+}
+
+.footer-section ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+  color: #c4d3fc;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover,
+.footer-section ul li a:focus {
+  color: #ffffff;
+  outline: none;
+  text-decoration: underline;
+}
+
+.footer-section p {
+  color: #c4d3fc;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+footer .copyright {
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #7a8fb9;
+  user-select: none;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer-section {
+    min-width: 100%;
+    text-align: center;
+  }
+}
 
         @media (max-width: 600px) {
             .container {
@@ -194,7 +286,7 @@
         <!-- BOOK 1 -->
         <section class="book">
             <h1>📕 Cyber Crime Book</h1>
-            <p>Cyber Crime wo jurm hota hai jo computer, internet ya digital systems ke zariye kiya jata hai.</p>
+            <p>Cyber Crime is a crime committed through computers, internet, or digital systems.</p>
 
             <h3>Chapter Highlights:</h3>
             <ul>
@@ -211,7 +303,7 @@
         <!-- BOOK 2 -->
         <section class="book">
             <h1>📘 Introduction to Cyber Security</h1>
-            <p>Cyber Security ka matlab systems, networks aur data ko attacks se protect karna hota hai.</p>
+            <p>Cyber Security means protecting systems, networks, and data from attacks.</p>
 
             <h3>Topics:</h3>
             <ul>
@@ -228,7 +320,7 @@
         <!-- BOOK 3 -->
         <section class="book">
             <h1>📗 Computer Architecture</h1>
-            <p>Computer Architecture computer system ke internal design ko samjhata hai jaise CPU, Memory aur I/O.</p>
+            <p>Computer Architecture explains the internal design of a computer system like CPU, Memory, and I/O.</p>
 
             <h3>Key Concepts:</h3>
             <ul>
@@ -245,8 +337,8 @@
         <!-- BOOK 4 -->
         <section class="book">
             <h1>📙 Software Engineering</h1>
-            <p>Software Engineering ek discipline hai jo software ko systematically design, develop aur maintain karne
-                par focus karti hai.</p>
+            <p>Software Engineering is a discipline focused on systematically designing, developing, and maintaining
+                software.</p>
 
             <h3>Important Topics:</h3>
             <ul>
@@ -263,7 +355,7 @@
         <!-- BOOK 5 -->
         <section class="book">
             <h1>📔 Introduction to Management</h1>
-            <p>Management ka matlab hai resources aur logon ko organize karke goals hasil karna.</p>
+            <p>Management means organizing resources and people to achieve goals.</p>
 
             <h3>Core Topics:</h3>
             <ul>
@@ -280,7 +372,7 @@
         <!-- BOOK 6 -->
         <section class="book">
             <h1>📒 Operating Systems</h1>
-            <p>Operating System computer hardware aur software ke darmiyan interface provide karta hai.</p>
+            <p>An Operating System provides an interface between computer hardware and software.</p>
 
             <h3>Topics Covered:</h3>
             <ul>
@@ -297,7 +389,7 @@
         <!-- BOOK 7 -->
         <section class="book">
             <h1>📓 Data Structures & Algorithms</h1>
-            <p>Data Structures aur Algorithms programming ka foundation hain jo data efficiently handle karte hain.</p>
+            <p>Data Structures and Algorithms are the foundation of programming that handle data efficiently.</p>
 
             <h3>Important Concepts:</h3>
             <ul>
@@ -311,10 +403,9 @@
             </footer>
         </section>
 
-
         <section class="book">
             <h1>📒 Operating Systems</h1>
-            <p>Operating System computer hardware aur software ke darmiyan interface provide karta hai.</p>
+            <p>An Operating System provides an interface between computer hardware and software.</p>
 
             <h3>Topics Covered:</h3>
             <ul>
@@ -330,8 +421,7 @@
 
         <section class="book">
             <h1>📓 Data Structures & Algorithms</h1>
-            <p>Data Structures aur Algorithms programming ka foundation hain jo data efficiently handle karte hain.
-            </p>
+            <p>Data Structures and Algorithms are the foundation of programming that handle data efficiently.</p>
 
             <h3>Important Concepts:</h3>
             <ul>
@@ -349,8 +439,7 @@
 
         <section class="book">
             <h1>📙 Linear Algebra</h1>
-            <p>Linear Algebra matrices, vectors aur linear transformations ke fundamental concepts ko cover karta
-                hai.</p>
+            <p>Linear Algebra covers fundamental concepts of matrices, vectors, and linear transformations.</p>
 
             <h3>Core Topics:</h3>
             <ul>
@@ -366,7 +455,7 @@
 
         <section class="book">
             <h1>📘 Principles of Economics</h1>
-            <p>Economics ka matlab hai resources ka efficient allocation aur market ke behavior ko samajhna.</p>
+            <p>Economics means the efficient allocation of resources and understanding market behavior.</p>
 
             <h3>Important Areas:</h3>
             <ul>
@@ -382,7 +471,7 @@
 
         <section class="book">
             <h1>📗 Digital Signal Processing</h1>
-            <p>DSP signal analysis aur processing techniques ko samajhne aur apply karne ke liye hai.</p>
+            <p>DSP is for understanding and applying signal analysis and processing techniques.</p>
 
             <h3>Key Topics:</h3>
             <ul>
@@ -398,8 +487,7 @@
 
         <section class="book">
             <h1>📙 Database Systems</h1>
-            <p>Database Systems data ko efficiently store, retrieve aur manage karne ke liye design kiye jate hain.
-            </p>
+            <p>Database Systems are designed to efficiently store, retrieve, and manage data.</p>
 
             <h3>Topics:</h3>
             <ul>
@@ -415,7 +503,7 @@
 
         <section class="book">
             <h1>📔 Environmental Science</h1>
-            <p>Environmental Science environment aur natural resources ki protection pe focus karta hai.</p>
+            <p>Environmental Science focuses on the protection of the environment and natural resources.</p>
 
             <h3>Important Concepts:</h3>
             <ul>
@@ -431,7 +519,7 @@
 
         <section class="book">
             <h1>📒 Artificial Intelligence</h1>
-            <p>Artificial Intelligence machines ko intelligent behavior dene ke techniques ko study karta hai.</p>
+            <p>Artificial Intelligence studies techniques to give machines intelligent behavior.</p>
 
             <h3>Core Topics:</h3>
             <ul>
@@ -447,6 +535,42 @@
 
     </div>
 
+   <footer class="fotr">
+  <div class="footer-container" role="contentinfo" aria-label="Footer with quick links and information">
+    <section class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html" aria-label="Go to Home page">Home</a></li>
+        <li><a href="book.html" aria-label="Browse Books collection">Books</a></li>
+        <li><a href="login.html" aria-label="Go to Login page">Login</a></li>
+        <li><a href="about.html" aria-label="Learn about the library">About Us</a></li>
+        <li><a href="login.html" aria-label="Contact the library">Contact</a></li>
+        <li><a href="privacy.html" aria-label="Read library policies">Privacy Policies</a></li>
+      </ul>
+    </section>
+    <section class="footer-section">
+      <h4>Contact & Support</h4>
+      <ul>
+        <li>Email: <a href="mailto:support@unilib.edu" aria-label="Send email to support">support@unilib.edu</a></li>
+        <li>Phone: <a href="tel:+1234567890" aria-label="Call support phone number">+1 (234) 567-890</a></li>
+        <li>Address: 123 University Drive, Campus City, Country</li>
+        <li><a href="privacy.html" aria-label="Read Privacy Policy">Privacy Policy</a></li>
+        <li><a href="terms.html" aria-label="Read Terms of Service">Terms of Service</a></li>
+      </ul>
+    </section>
+    <section class="footer-section">
+      <h4>About University Digital Library</h4>
+      <p>
+        The University Digital Library is committed to providing open and convenient access to academic knowledge for students, faculty, and staff across all disciplines.
+      </p>
+    </section>
+  </div>
+  <div class="copyright">
+    &copy; 2026 University Digital Library | Developed by Shoukat | All rights reserved
+  </div>
+</footer>
+
 </body>
+
 
 </html>
